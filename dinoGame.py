@@ -240,35 +240,23 @@ def main():
             if player.dino_rect.x > obstacle.rect.x and not obstacle.scored:
                 obstacle.scored = True
                 points += 1
-                if points == 1:
-                    red.on()
-                    # pygame.time.wait(1000)
-                    red.off()
-                    red.on()
-                    red.off()
-                if points == 2:
-                    green.on()
-                    # pygame.time.wait(1000)
-                    green.off()
-                    green.on()
-                    green.off()
                 if points == 3:
-                    yellow.on()
-                    # pygame.time.wait(1000)
-                    yellow.of()
-                    yellow.on()
-                    yellow.of()
-                if points == 4:
                     red.on()
-                    green.on()
-                    yellow.on()
-                    # pygame.time.wait(2000)
+                    pygame.time.wait(1000)
                     red.off()
+                if points == 6:
+                    green.on()
+                    pygame.time.wait(1000)
                     green.off()
-                    yellow.off()
+                if points == 9:
+                    yellow.on()
+                    pygame.time.wait(1000)
+                    yellow.of()
+                if points == 12:
                     red.on()
                     green.on()
                     yellow.on()
+                    pygame.time.wait(2000)
                     red.off()
                     green.off()
                     yellow.off()
