@@ -277,7 +277,7 @@ def menu(death_count):
         SCREEN.fill((255, 255, 255))
         font = pygame.font.Font('freesansbold.ttf', 30)
 
-        if death_count == 0:
+        if death_count == 0 :
             text = font.render("Press any Key to Start", True, (0, 0, 0))
         elif death_count > 0:
             text = font.render("Press any Key to continue", True, (0, 0, 0))
