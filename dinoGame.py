@@ -1,7 +1,13 @@
+from gpiozero import LED
+import time
 import pygame
 import os
 import random
 pygame.init()
+
+red = LED(17)
+green=LED(26)
+yellow = LED(27)
 
 # Global Constants
 display_info = pygame.display.Info()
@@ -233,6 +239,21 @@ def main():
             if player.dino_rect.x > obstacle.rect.x and not obstacle.scored:
                 obstacle.scored = True
                 points += 1
+                if points == 3:
+                    red.on()
+                    time.sleep(2)
+                if points == 6:
+                    green.on()
+                    time.sleep(2)
+                if points == 9:
+                    yellow.on()
+                    time.sleep(2)
+                if points == 12:
+                    red.on()
+                    green.on()
+                    yellow.on()
+                    time.sleep(5)
+
             if player.dino_rect.colliderect(obstacle.rect):
                 pygame.time.delay(1000)
                 death_count += 1
