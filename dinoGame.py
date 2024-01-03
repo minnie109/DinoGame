@@ -242,18 +242,24 @@ def main():
                 points += 1
                 if points == 1:
                     red.on()
-                    pygame.time.wait(2000)
+                    pygame.time.wait(1000)
+                    red.off()
                 if points == 2:
                     green.on()
-                    pygame.time.wait(2000)
+                    pygame.time.wait(1000)
+                    green.off()
                 if points == 3:
                     yellow.on()
-                    pygame.time.wait(2000)
+                    pygame.time.wait(1000)
+                    yellow.off()
                 if points == 4:
                     red.on()
                     green.on()
                     yellow.on()
                     pygame.time.wait(2000)
+                    red.off()
+                    green.off()
+                    yellow.off()
 
             if player.dino_rect.colliderect(obstacle.rect):
                 pygame.time.delay(1000)
