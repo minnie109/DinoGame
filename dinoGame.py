@@ -214,7 +214,7 @@ def main():
 
     while run:
         t = pygame.time.get_ticks()
-        if (t - start_time > 30000):
+        if (t - start_time > 90000):
             points = 0
             menu(death_count)
         for event in pygame.event.get():
