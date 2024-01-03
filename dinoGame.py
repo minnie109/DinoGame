@@ -1,13 +1,13 @@
-from gpiozero import LED
-import time
+#from gpiozero import LED
+#import time
 import pygame
 import os
 import random
 pygame.init()
 
-red = LED(17)
-green=LED(26)
-yellow = LED(27)
+# red = LED(17)
+# green=LED(26)
+# yellow = LED(27)
 
 # Global Constants
 display_info = pygame.display.Info()
@@ -170,12 +170,13 @@ class Bird(Obstacle):
         SCREEN.blit(self.image[self.index//5], self.rect)
         self.index += 1
 
-global points, death_count
+global points, death_count, start_time
 points = 0
 death_count = 0
+start_time = 0
 
 def main():
-    global game_speed, x_pos_bg, y_pos_bg, obstacles, points, death_count
+    global game_speed, x_pos_bg, y_pos_bg, obstacles, points, death_count, start_time
     run = True
     clock = pygame.time.Clock()
     player = Dinosaur()
@@ -195,7 +196,7 @@ def main():
         text = font.render("Points: " + str(points), True, (0, 0, 0))
         textRect = text.get_rect()
         textRect.center = (1000, 40)
-        t_text = font.render("time: " + str(int(pygame.time.get_ticks() / 1000)), True, (0, 0, 0))
+        t_text = font.render("time: " + str(int((pygame.time.get_ticks() - start_time) / 1000)), True, (0, 0, 0))
         t_text_rect = t_text.get_rect()
         t_text_rect.center = (1000, 80)
         SCREEN.blit(text, textRect)
@@ -213,7 +214,7 @@ def main():
 
     while run:
         t = pygame.time.get_ticks()
-        if (t > 30000):
+        if (t - start_time > 30000):
             menu(death_count)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -240,19 +241,19 @@ def main():
                 obstacle.scored = True
                 points += 1
                 if points == 3:
-                    red.on()
-                    time.sleep(2)
+                    #red.on()
+                    pygame.time.wait(2000)
                 if points == 6:
-                    green.on()
-                    time.sleep(2)
+                    #green.on()
+                    pygame.time.wait(2000)
                 if points == 9:
-                    yellow.on()
-                    time.sleep(2)
+                    #yellow.on()
+                    pygame.time.wait(2000)
                 if points == 12:
-                    red.on()
-                    green.on()
-                    yellow.on()
-                    time.sleep(5)
+                    # red.on()
+                    # green.on()
+                    # yellow.on()
+                    pygame.time.wait(2000)
 
             if player.dino_rect.colliderect(obstacle.rect):
                 pygame.time.delay(1000)
@@ -271,7 +272,7 @@ def main():
 
 
 def menu(death_count):
-    global points
+    global points, start_time
     run = True
     while run:
         SCREEN.fill((255, 255, 255))
@@ -286,11 +287,11 @@ def menu(death_count):
             scoreRect = score.get_rect()
             scoreRect.center = (SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2 + 50)
             SCREEN.blit(score, scoreRect)
-            t = font.render("Your time: " + str(int(pygame.time.get_ticks()/1000)), True, (0, 0, 0))
+            t = font.render("Your time: " + str(int((pygame.time.get_ticks() - start_time) / 1000)), True, (0, 0, 0))
             t_rect = t.get_rect()
             t_rect.center = (SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2 + 100)
             SCREEN.blit(t, t_rect)
-        if int(pygame.time.get_ticks()/1000) >= 30:
+        elif int((pygame.time.get_ticks() - start_time) / 1000) >= 30:
             text = font.render("The end", True, (0, 0, 0))
         textRect = text.get_rect()
         textRect.center = (SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)
@@ -301,6 +302,7 @@ def menu(death_count):
             if event.type == pygame.QUIT:
                 run = False
             if event.type == pygame.KEYDOWN:
+                start_time = pygame.time.get_ticks()
                 main()
 
 
