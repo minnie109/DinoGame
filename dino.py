@@ -10,9 +10,11 @@ green=LED(26)
 yellow = LED(27)
 
 # Global Constants
-SCREEN_HEIGHT = 600
-SCREEN_WIDTH = 1100
-SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+display_info = pygame.display.Info()
+SCREEN_HEIGHT = display_info.current_h
+SCREEN_WIDTH = display_info.current_w
+# SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+SCREEN = pygame.display.set_mode((SCREEN_HEIGHT, SCREEN_WIDTH),pygame.FULLSCREEN)
 
 RUNNING = [pygame.image.load(os.path.join("Assets/Dino", "DinoRun1.png")),
            pygame.image.load(os.path.join("Assets/Dino", "DinoRun2.png"))]
@@ -186,6 +188,26 @@ def main():
     def score():
         global points, game_speed
         points += 1
+        if points == 500:
+            red.on()
+            pygame.time.wait(1000)
+            red.off()
+        if points == 1000:
+            green.on()
+            pygame.time.wait(1000)
+            green.off()
+        if points == 1500:
+            yellow.on()
+            pygame.time.wait(1000)
+            yellow.off()
+        if points == 2000:
+            red.on()
+            green.on()
+            yellow.on()
+            pygame.time.wait(2000)
+            red.off()
+            green.off()
+            yellow.off()
         if points % 100 == 0:
             game_speed += 1
 
@@ -220,8 +242,6 @@ def main():
                 obstacles.append(SmallCactus(SMALL_CACTUS))
             elif random.randint(0, 2) == 1:
                 obstacles.append(LargeCactus(LARGE_CACTUS))
-            elif random.randint(0, 2) == 2:
-                obstacles.append(Bird(BIRD))
 
         for obstacle in obstacles:
             obstacle.draw(SCREEN)
@@ -230,26 +250,6 @@ def main():
                 pygame.time.delay(2000)
                 death_count += 1
                 menu(death_count)
-                if points == 500:
-                    red.on()
-                    pygame.time.wait(1000)
-                    red.off()
-                if points == 1000:
-                    green.on()
-                    pygame.time.wait(1000)
-                    green.off()
-                if points == 1500:
-                    yellow.on()
-                    pygame.time.wait(1000)
-                    yellow.off()
-                if points == 2000:
-                    red.on()
-                    green.on()
-                    yellow.on()
-                    pygame.time.wait(2000)
-                    red.off()
-                    green.off()
-                    yellow.off()
 
         background()
 
