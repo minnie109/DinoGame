@@ -181,7 +181,7 @@ def main():
     clock = pygame.time.Clock()
     player = Dinosaur()
     cloud = Cloud()
-    game_speed = 20
+    game_speed = 25
     x_pos_bg = 0
     y_pos_bg = 380
     font = pygame.font.Font('freesansbold.ttf', 20)
@@ -241,19 +241,19 @@ def main():
             if player.dino_rect.x > obstacle.rect.x and not obstacle.scored:
                 obstacle.scored = True
                 points += 1
-                if points == 3:
+                if points == 2:
                     red.on()
                     pygame.time.wait(1000)
                     red.off()
-                if points == 6:
+                if points == 4:
                     green.on()
                     pygame.time.wait(1000)
                     green.off()
-                if points == 9:
+                if points == 6:
                     yellow.on()
                     pygame.time.wait(1000)
                     yellow.off()
-                if points == 12:
+                if points == 8:
                     red.on()
                     green.on()
                     yellow.on()
