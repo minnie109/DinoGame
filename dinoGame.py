@@ -4,9 +4,11 @@ import random
 pygame.init()
 
 # Global Constants
-SCREEN_HEIGHT = 600
-SCREEN_WIDTH = 1100
-SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+display_info = pygame.display.Info()
+SCREEN_HEIGHT = display_info.current_h
+SCREEN_WIDTH = display_info.current_w
+# SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+SCREEN = pygame.display.set_mode((SCREEN_HEIGHT, SCREEN_WIDTH),pygame.FULLSCREEN)
 
 RUNNING = [pygame.image.load(os.path.join("Assets/Dino", "DinoRun1.png")),
            pygame.image.load(os.path.join("Assets/Dino", "DinoRun2.png"))]
