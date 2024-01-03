@@ -188,19 +188,19 @@ def main():
     def score():
         global points, game_speed
         points += 1
-        if points == 500:
+        if points == 100:
             red.on()
             pygame.time.wait(1000)
             red.off()
-        if points == 1000:
+        if points == 200:
             green.on()
             pygame.time.wait(1000)
             green.off()
-        if points == 1500:
+        if points == 300:
             yellow.on()
             pygame.time.wait(1000)
             yellow.off()
-        if points == 2000:
+        if points == 400:
             red.on()
             green.on()
             yellow.on()
