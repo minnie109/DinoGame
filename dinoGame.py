@@ -251,7 +251,7 @@ def main():
                 if points == 9:
                     yellow.on()
                     pygame.time.wait(1000)
-                    yellow.of()
+                    yellow.off()
                 if points == 12:
                     red.on()
                     green.on()
