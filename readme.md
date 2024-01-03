@@ -24,6 +24,9 @@
 ## 執行過程
 - 程式碼
   - dinoGame.py：恐龍遊戲
+  - redLEB.py：模擬紅色led燈亮起
+  - greenLEB.py：模擬綠色led燈亮起
+  - yellowLEB.py：模擬黃色led燈亮起
 - 硬體準備
   - raspberry pi環境組裝
   - 遊戲機台組裝
@@ -47,15 +50,15 @@
 大家一起討稐~
 
 ## 工作分配
-許湘蝶：紅外線感測裝置、LED燈裝置、創意發想
-楊于葳：LED燈裝置、材料購買、創意發想
-陳宣閔：dinoGame、撰寫README、創意發想
-劉仁傑：遊戲機台組裝、材料購買
-許家維：dcard宣傳
-感謝Josh、蓬萊人偶等熱心助教的指導~^^
+- 許湘蝶：紅外線感測裝置、LED燈裝置、創意發想
+- 楊于葳：LED燈裝置、材料購買、創意發想
+- 陳宣閔：dinoGame、撰寫README、創意發想
+- 劉仁傑：遊戲機台組裝、材料購買
+- 許家維：dcard宣傳
+- 感謝Josh、蓬萊人偶等熱心助教的指導~^^
 ## 善用所學
 linux系統指令、python、raspberry pi、os、高等物理
 ## 參考資料
-遊戲軟體參考：https://github.com/maxontech/chrome-dinosaur
-紅外線感測參考：https://youtu.be/7i0dvQGM-Zk?si=t10epjFb-RD5S5_6
-led裝置參考：https://www.youtube.com/watch?v=kfb34fn9zpo&t=276s
+- 遊戲軟體參考：https://github.com/maxontech/chrome-dinosaur
+- 紅外線感測參考：https://youtu.be/7i0dvQGM-Zk?si=t10epjFb-RD5S5_6
+- led裝置參考：https://www.youtube.com/watch?v=kfb34fn9zpo&t=276s
