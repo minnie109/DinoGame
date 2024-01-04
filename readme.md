@@ -36,7 +36,7 @@
   - LED燈裝置
   - 遊戲開始按鈕 ->從小按鈕變成巨型ENTER鍵(感謝熱心助教贊助)
 ## DinoGame START！
-- 執行程式碼：python dino.py
+- 執行程式碼：`python dino.py`
 - 按下巨型ENTER鍵!!
 ## 心得回饋&遇到的困難
 1. raspberry pi環境組裝
