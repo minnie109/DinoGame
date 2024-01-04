@@ -19,9 +19,10 @@
 ## 軟體
 - python
 - pygame
-## 前置下載
+## 前置下載$作業
 - pygame
 - python
+- vnc -> 畫面連接
 ## 執行過程
 - 程式碼
   - dino.py：恐龍遊戲
