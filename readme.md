@@ -34,7 +34,8 @@
   - raspberry pi環境組裝
   - 遊戲機台組裝
   - 紅外線感應裝置 -> fail
-  - LED燈裝置
+  - LED燈裝置：
+    - 電路圖 
   - 遊戲開始按鈕 ->從小按鈕變成巨型ENTER鍵(感謝熱心助教贊助)
 ## DinoGame START！
 - 執行程式碼：`python dino.py`
