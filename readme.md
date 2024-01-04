@@ -26,15 +26,16 @@
 ## 執行過程
 - 程式碼
   - dino.py：恐龍遊戲
-  - redLED.py：模擬紅色led燈亮起
-  - greenLED.py：模擬綠色led燈亮起
-  - yellowLED.py：模擬黃色led燈亮起
+  - testRedLED.py：模擬紅色led燈亮起
+  - testGreenLED.py：模擬綠色led燈亮起
+  - testYellowLED.py：模擬黃色led燈亮起
   - Button.py：模擬開始按鈕 -> 無法套用
 - 硬體準備
   - raspberry pi環境組裝
   - 遊戲機台組裝
   - 紅外線感應裝置 -> fail
   - LED燈裝置
+     - 電路圖：![螢幕擷取畫面 2024-01-04 173329](https://github.com/110213018/DinoGame/assets/104425454/b85eb6ad-2aa8-4f1b-b755-e49e99397ace)
   - 遊戲開始按鈕 ->從小按鈕變成巨型ENTER鍵(感謝熱心助教贊助)
 ## DinoGame START！
 - 執行程式碼：`python dino.py`
