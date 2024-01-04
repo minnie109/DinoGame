@@ -28,7 +28,7 @@
   - redLED.py：模擬紅色led燈亮起
   - greenLED.py：模擬綠色led燈亮起
   - yellowLED.py：模擬黃色led燈亮起
-  - Button.py：模擬開始按鈕
+  - Button.py：模擬開始按鈕 -> 無法套用
 - 硬體準備
   - raspberry pi環境組裝
   - 遊戲機台組裝
